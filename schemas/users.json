@@ -1,0 +1,109 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "definitions": {
+  
+      
+      "user": {
+        "$id": "#user",
+        "title": "User",
+        "description": "Data to register a new user.",
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "User's ID",
+            "type": "string"
+            },   
+          "email": {
+            "description": "User's Email",
+            "type": "string"
+          },          
+          "password": {
+            "description": "Password for registration",
+            "type": "string"
+          }
+        },
+        "required": ["username", "email", "password"],
+        "additionalProperties": false
+      },
+  
+      
+      "userLogin": {
+        "$id": "#user Login",
+        "title": "User Login",
+        "description": "",
+        "type": "object",
+        "properties": {
+          
+          "email": {
+            "description": "User's email address",
+            "type": "string"
+          },
+          "password": {
+            "description": "user's password",
+            "type": "string"
+          }
+        }
+      },
+      
+
+      "userRegister": {
+        "$id": "#userRegister",
+        "title": "User View",
+        "description": "",
+        "type": "object",
+        "properties": {
+          
+          "email": {
+            "description": "User's email address",
+            "type": "string"
+          },
+          "password": {
+            "description": "user's password",
+            "type": "string"
+          }
+        }
+      },
+      
+      
+      "userDeleted": {
+        "$id": "#userDeleted",
+        "title": "User Deleted",
+        "description": "Confirmation of a successful deletion",
+        "type": "object",
+        "properties": {
+          "email": {
+            "description": "Email of user",
+            "type": "string"
+          }
+        }
+      },
+
+
+      "userUpdated": {
+        "$id": "#userDeleted",
+        "title": "User Deleted",
+        "description": "Confirmation of a successful deletion",
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "ID of User",
+            "type": "string"
+          },
+
+          "email": {
+            "description": "Email of user",
+            "type": "string"
+          },
+
+          "password": {
+            "description": "password of user",
+            "type": "string"
+          }
+          
+        }
+      }
+      
+      
+    }
+  }
+  

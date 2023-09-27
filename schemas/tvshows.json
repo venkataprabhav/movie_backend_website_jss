@@ -1,0 +1,70 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "definitions": {
+  
+      
+      "TVShow": {
+        "$id": "#TVShow",
+        "title": "TVShow",
+        "description": "Information of all TVShows in database.",
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "TVShow's ID",
+            "type": "string"
+            },   
+            "name": {
+                "description": "TVShow name",
+                "type": "string"
+              },
+            "genre": {
+                "description": "TVShow's genre",
+                "type": "string"
+            },
+            "year": {
+                "description": "Year of Release",
+                "type": "string"
+            },
+            
+            "interested": {
+                "description": "TVShows of same genre",
+                "type": "string"
+            }  
+          
+        },
+        "additionalProperties": false
+      },
+
+      "horrorTVShow": {
+        "$id": "#horrorTVShow",
+        "title": "TVShow",
+        "description": "Information of all TVShows in database.",
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "TVShow's ID",
+            "type": "string"
+            },   
+            "name": {
+                "description": "TVShow's name",
+                "type": "string"
+              },
+            "genre": {
+                "description": "TVShow's genre",
+                "type": "string"
+            },
+            "year": {
+                "description": "Year of Release",
+                "type": "string"
+            },
+            
+            "interested": {
+                "description": "TVShows of same genre",
+                "type": "string"
+            }  
+          
+        }
+      }
+    }
+}
+

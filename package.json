@@ -1,0 +1,29 @@
+{
+  "name": "venkata_backend_11251657",
+  "version": "1.0.0",
+  "description": "movie api",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.coventry.ac.uk/6003CEM/venkata_backend_11251657"
+  },
+  "author": "Venkata Prabhav",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-router": "^0.0.1",
+    "express-session": "^1.17.3",
+    "firebase": "^8.10.1",
+    "jsonwebtoken": "^9.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "supertest": "^6.3.3"
+  }
+}

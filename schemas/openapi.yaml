@@ -1,0 +1,197 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Back End Demonstration API
+  description: Simple Movie API.
+  contact:
+    name: Venkata Prabhav Akkenapragada
+    email: akkenaprav@uni.coventry.ac.uk
+  license:
+    name: Apache 2.0
+    url: 'https://www.apache.org/licenses/LICENSE-2.0.html'
+servers:
+  - url: 'https://wheelpancake-ceramickermit-8080.codio-box.uk/'
+    description: Development server
+tags:
+  - name: Users
+    description: API endpoints for user management.
+  - name: Movies
+    description: Access information of movies stored in a local cloud database.
+  - name: SearchMovies
+    description: Search for movies which are retrieved through a Third-Party API. 
+  - name: TVShow
+    description: Search for movies which are retrieved through a Third-Party API. 
+
+paths:
+  /users:
+    get:
+      tags:
+        - Users
+      description:
+        Get user by id.
+      requestBody:
+        description: All new user data.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ./users.json#/definitions/user
+
+      responses:
+        '200':
+          description: View of all users information - ID, Email, and Hashed Password.
+        '401':
+          description: Only Admins can view user information.
+        '404':
+          description: User was not found in the DB.
+
+
+  /users/login:        
+    post:
+      tags:
+        - Users
+      description:
+        Login to Account.
+      requestBody:
+        description: Login.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ./users.json#/definitions/userLogin
+      responses:
+        '200':
+          description: Update confirmation and link to record.
+        '404':
+          description: User was not found in the DB.
+    
+  /users/register:        
+    post:
+      tags:
+        - Users
+      description:
+        Create an Account.
+      requestBody:
+        description: Registration.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ./users.json#/definitions/userRegister
+      responses:
+        '200':
+          description: Update confirmation and link to record.
+        '404':
+          description: User was not found in the DB.
+
+  /users/delete:
+    delete:
+      tags:
+        - Users
+      description:
+        Delete user by Email.
+      requestBody:
+          description: Deletion of User.
+          required: true
+          content:
+            application/json:
+              schema:
+                $ref: ./users.json#/definitions/userDeleted
+      responses:
+        '200':
+          description: Delete confirmation.
+        '401':
+          description: Only admin users can delete user accounts.
+        '404':
+          description: User was not found in the DB.
+
+  /users/update:
+    put:
+      tags:
+        - Users
+      description:
+        Update User Details.
+      requestBody:
+          description: contains email, password and id.
+          required: true
+          content:
+            application/json:
+              schema:
+                $ref: ./users.json#/definitions/userUpdated
+      responses:
+        '200':
+          description: Delete confirmation.
+        '401':
+          description: Only admin users can delete user accounts.
+        '404':
+          description: User was not found in the DB.
+
+  /movies:
+    get:
+      tags:
+        - Movies
+      description:
+        Shows all movies from database.
+      requestBody:
+        description: Retrieves movies from database.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ./movies.json#/definitions/movie
+  
+  /movies/horror:
+    get:
+      tags:
+        - Movies
+      description:
+        Shows all horror movies from database.
+      requestBody:
+        description: Retrieves horror movies from database.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ./movies.json#/definitions/horrorMovie
+
+  /tvshows:
+    get:
+      tags:
+        - TVShow
+      description:
+        Shows all horror TVShows from database.
+      requestBody:
+        description: Retrieves horror TVShows from database.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ./tvshows.json#/definitions/horrorTVShow
+
+  /tvshows/horror:
+    get:
+      tags:
+        - TVShow
+      description:
+        Shows all horror TVShows from database.
+      requestBody:
+        description: Retrieves horror TVShows from database.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ./tvshows.json#/definitions/horrorTVShow
+
+  /searchMovies:
+    get:
+      tags:
+        - SearchMovies
+      description:
+        Shows all horror TVShows from database.
+      requestBody:
+        description: Retrieves horror TVShows from database.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ./searchMovies.json#/definitions/searchMovie

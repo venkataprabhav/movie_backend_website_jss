@@ -1,0 +1,76 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "definitions": {
+  
+      
+      "movie": {
+        "$id": "#movie",
+        "title": "Movie",
+        "description": "Information of all movies in database.",
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "Movie's ID",
+            "type": "string"
+            },   
+            "name": {
+                "description": "Movie name",
+                "type": "string"
+              },
+            "genre": {
+                "description": "Movie's genre",
+                "type": "string"
+            },
+            "year": {
+                "description": "Year of Release",
+                "type": "string"
+            },
+            "image": {
+                "description": "Movie's poster",
+                "type": "string"
+            },
+            "interested": {
+                "description": "Movies of same genre",
+                "type": "string"
+            }  
+          
+        },
+        "additionalProperties": false
+      },
+
+      "horrorMovie": {
+        "$id": "#horrorMovie",
+        "title": "Movie",
+        "description": "Information of all movies in database.",
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "Moive's ID",
+            "type": "string"
+            },   
+            "name": {
+                "description": "Movie's name",
+                "type": "string"
+              },
+            "genre": {
+                "description": "Movie's genre",
+                "type": "string"
+            },
+            "year": {
+                "description": "Year of Release",
+                "type": "string"
+            },
+            "image": {
+                "description": "Movie's poster",
+                "type": "string"
+            },
+            "interested": {
+                "description": "Movies of same genre",
+                "type": "string"
+            }  
+          
+        }
+      }
+    }
+}
+
